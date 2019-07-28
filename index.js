@@ -48,25 +48,6 @@ const simulate = (time, alpha, beta) => {
                 const customer = queue.shift();
                 queueLen--;
                 let customerWaitingTime = curTime - (customer.arrivedAt + customer.processingTimeRequired - 1);
-                if (customerWaitingTime > 0 && false) {
-                    console.log("Waiting time is more than 0");
-                    console.log(JSON.stringify({
-                        customer,
-                        customerWaitingTime,
-                        curTime,
-                        queueLen,
-                        maxQueueLen
-                    }, null, 2));
-                }
-                if (customerWaitingTime < 0) {
-                    console.log("Waiting time should not be less than zero");
-                    console.log(JSON.stringify({
-                        customer,
-                        customerWaitingTime,
-                        curTime
-                    }, null, 2));
-                    process.exit()
-                }
                 avgWaitingTime = ((avgWaitingTime * noOfCustomerServed) + customerWaitingTime) / (noOfCustomerServed + 1);
                 noOfCustomerServed++;
                 maxWaitingTime = maxWaitingTime < customerWaitingTime ? customerWaitingTime : maxWaitingTime;
