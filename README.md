@@ -20,6 +20,6 @@ We have to find out:
 2. Given only red customers, what is average and maxium queue length?
 
 
-[probabilityOfCustomerArrival]: https://github.com/chandrakantap/jibblebs/raw/master/src/images/probabilityOfCustomerArrival.png "Probability of customer arrival"
+[probabilityOfCustomerArrival]: https://github.com/chandrakantap/jibblebs/blob/master/images/probabilityOfCustomerArrival.png   "Probability of customer arrival"
 
-[customerProcessingTimeBetaDist]: https://github.com/chandrakantap/jibblebs/raw/master/src/images/customerProcessingTimeBetaDist.png "Customer Processing time distribution"
+[customerProcessingTimeBetaDist]: https://raw.githubusercontent.com/chandrakantap/jibblebs/master/images/customerProcessingTimeBetaDist.png "Customer Processing time distribution"
