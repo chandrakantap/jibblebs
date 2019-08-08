@@ -38,7 +38,7 @@ const simulate = (time, alpha, beta) => {
             });
             queueLen++;
             maxQueueLen = maxQueueLen < queueLen ? queueLen : maxQueueLen;
-            timeSinceLastCustomerArrived = 0;
+            timeSinceLastCustomerArrived = 0
         }
 
         if (queueLen > 0) {
@@ -51,6 +51,7 @@ const simulate = (time, alpha, beta) => {
                 avgWaitingTime = ((avgWaitingTime * noOfCustomerServed) + customerWaitingTime) / (noOfCustomerServed + 1);
                 noOfCustomerServed++;
                 maxWaitingTime = maxWaitingTime < customerWaitingTime ? customerWaitingTime : maxWaitingTime;
+                console.log('Customer arrives at: ' + customer.arrivedAt + ' with processing time:' + customer.processingTimeRequired + ' leaves at:' + curTime);
             }
         }
 
@@ -65,13 +66,13 @@ const simulate = (time, alpha, beta) => {
     }
 }
 
-const YAlpha = YBeta = 2;
-const RAlpha = RBeta = 0.5;
+const YAlpha = YBeta = .5;
+const RAlpha = RBeta = .9;
 const BAlpha = 5, BBeta = 1;
 
-const YResult = simulate(3600, YAlpha, YBeta);
-const RResult = simulate(3600, RAlpha, RBeta);
-const BResult = simulate(3600, BAlpha, BBeta);
+const YResult = simulate(3, YAlpha, YBeta);
+const RResult = simulate(36000, RAlpha, RBeta);
+const BResult = simulate(3, BAlpha, BBeta);
 
 const YAvMxDiff = YResult.maxWaitingTime - YResult.avgWaitingTime;
 const RAvMxDiff = RResult.maxWaitingTime - RResult.avgWaitingTime;
